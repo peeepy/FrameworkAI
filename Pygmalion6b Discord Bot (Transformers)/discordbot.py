@@ -11,6 +11,7 @@ from discord.ext import commands, tasks
 from discord.ext.commands import Bot, Context
 import asyncio
 import shutil
+import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 # get .env variables
@@ -147,7 +148,7 @@ async def on_ready():
 
 # same as above but this is the version with more complex logic
 # This function is triggered every time a message is sent in a Discord server
- async def on_message(message):
+async def on_message(message):
      if message.author == bot.user:
          return
      if PERIOD_IGNORE and not message.content.startswith("."):
