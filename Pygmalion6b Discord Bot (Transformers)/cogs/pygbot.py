@@ -72,14 +72,6 @@ class Chatbot:
         else:
             return "This is an empty message. Something went wrong. Please check your code!"
 
-    def parse_text(self, generated_text):
-        text_lines = [line.strip() for line in str(generated_text).split("\n")]
-        aurora_line = next((line for line in reversed(text_lines) if 'AuroraAI' in line), None)
-        if aurora_line is not None:
-            aurora_line = aurora_line.replace('AuroraAI:', '').strip()
-            for i in range(len(text_lines)):
-                text_lines[i] = text_lines[i].replace('AuroraAI:', '')
-        return aurora_line
 
     def save_conversation(self, message, message_content, bot):
         # add user response to conversation history
