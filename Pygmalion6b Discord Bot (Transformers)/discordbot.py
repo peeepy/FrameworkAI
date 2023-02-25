@@ -11,7 +11,7 @@ from discord.ext import commands, tasks
 from discord.ext.commands import Bot, Context
 import asyncio
 import shutil
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 # get .env variables
 load_dotenv()
